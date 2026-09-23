@@ -1,0 +1,154 @@
+.skull-page {
+  --accent: #df6178;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  min-height: 100svh;
+  height: 100svh;
+  padding: 22px 18px 100px;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at 20% 40%,
+    #51202d 0,
+    #19151e 30%,
+    #08090d 77%
+  );
+}
+
+.skull-page::before,
+.skull-page::after {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  content: "";
+}
+.skull-page::before {
+  top: 18%;
+  left: -28%;
+  width: 70vw;
+  height: 50vh;
+  background: #d84b6826;
+  filter: blur(45px);
+  animation: ambient-pulse 6s ease-in-out infinite;
+}
+.skull-page::after {
+  right: 12%;
+  bottom: 25%;
+  width: 4px;
+  height: 4px;
+  background: #ff9aad;
+  box-shadow:
+    38px -90px #ff9aad,
+    -72px -150px #df6178,
+    -120px -40px #8a1f30,
+    30px -210px #f5c96b,
+    -30px -260px #df6178;
+  animation: motes 8s ease-in-out infinite alternate;
+}
+.skull {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 82px;
+  width: min(82vw, 360px);
+  max-height: 58svh;
+  object-fit: contain;
+  object-position: bottom right;
+  opacity: 0.38;
+  filter: drop-shadow(-18px 0 20px #ff5e7b00);
+  animation:
+    breathe 5s ease-in-out infinite,
+    glow 7s ease-in-out infinite;
+}
+.skull-page .page-content {
+  min-height: 0;
+  display: block;
+}
+.skull-page h1 {
+  margin-bottom: 12px;
+  color: #f2c6cf;
+  font-size: clamp(2.25rem, 10vw, 3.35rem);
+}
+.blessing {
+  position: relative;
+  z-index: 4;
+  width: min(100%, 330px);
+  padding: 18px 18px 18px 20px;
+  border-left: 2px solid var(--rosa-fresa);
+  border-radius: 0 var(--radio) var(--radio) 0;
+  background: transparent;
+  box-shadow: none;
+  animation: letter-arrival 0.9s ease-out both;
+}
+.blessing h1,
+.blessing .lead {
+  text-shadow:
+    0 2px 12px #000,
+    0 1px 3px #000;
+}
+.blessing .lead {
+  margin-bottom: 13px;
+  font-size: clamp(0.84rem, 2.3vw, 0.94rem);
+  line-height: 1.48;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: translate(0) scale(1);
+  }
+  50% {
+    transform: translate(-8px, -5px) scale(1.025);
+  }
+}
+@keyframes glow {
+  0%,
+  100% {
+    filter: drop-shadow(-14px 0 17px #ff5e7b00);
+  }
+  45%,
+  58% {
+    filter: drop-shadow(-14px 0 17px #ff5e7b99);
+  }
+}
+@keyframes ambient-pulse {
+  50% {
+    opacity: 0.45;
+    transform: scale(1.2);
+  }
+}
+@keyframes motes {
+  to {
+    opacity: 0.25;
+    transform: translate(-18px, 22px);
+  }
+}
+@keyframes letter-arrival {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .skull-page {
+    padding-top: 16px;
+  }
+  .blessing {
+    padding: 15px 15px 15px 17px;
+  }
+  .blessing .lead {
+    font-size: 0.88rem;
+    line-height: 1.48;
+  }
+  .skull {
+    width: min(78vw, 320px);
+    max-height: 53svh;
+    bottom: 80px;
+  }
+}
