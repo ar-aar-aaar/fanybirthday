@@ -16,6 +16,7 @@
 }
 .surprise h1 {
   color: var(--rosa-suave);
+  margin-top: 20px;
 }
 .hint {
   margin: 0 auto 25px;
@@ -44,7 +45,12 @@
 .revealed .invite {
   display: none;
 }
-
+.revealed .eyebrow {
+  display: none;
+}
+body.revealed {
+  padding-top: 0;
+}
 .cake {
   position: absolute;
   width: 250px;

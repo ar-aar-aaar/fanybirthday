@@ -1,8 +1,8 @@
 const page = document.body.dataset.page;
 const tracks = {
-  surprise: { title: 'Birthday', artist: 'Una sorpresa para Fany', src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', cover: 'images/skull.png' },
-  owl: { title: 'Midnight City', artist: 'La música nos encontró', src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3', cover: 'images/owl.png' },
-  skull: { title: 'Blessings', artist: 'Con cariño para Fany', src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3', cover: 'images/skull.png' }
+  surprise: { title: 'Birthday', artist: 'Una sorpresa para Fany', src: '/music/mananitas.mp3', cover: 'images/skull.png' },
+  owl: { title: 'Midnight City', artist: 'La música nos encontró', src: '/music/tremorcut.mp3', cover: 'images/owl.png' },
+  skull: { title: 'Blessings', artist: 'Con cariño para Fany', src: '/music/stirb.mp3', cover: 'images/skull.png' }
 };
 
 const track = tracks[page];
